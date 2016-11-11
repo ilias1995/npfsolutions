@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div id="gtco-blog" data-section="blog" style="margin-top: 0; height: 900px">
+        <div class="gtco-container" id="blog_text" style="top: -26px; background-color: rgba(211, 211, 211, 0.62); width: 90%; max-width: none">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 text-center gtco-heading" style="margin-top: 40px">
+                    <h2>Продукты питание</h2>
+                    {% for feed_product in feed_products %}
+                          <div class="col-md-4">
+                            <div class="thumbnail">
+                              <img src="{{ feed_product.feed_image.url }}" alt="..." width="300" style="height: 250px">
+                              <div class="caption">
+                                <h3>{{ feed_product.feed_name }}</h3>
+                                <p>{{ feed_product.location }}</p>
+{#                                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>#}
+                              </div>
+                            </div>
+                          </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

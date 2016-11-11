@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<body>
+<div class="gtco-loader"></div>
+
+<div id="page">
+    <nav id="hide_menu_title" class="gtco-nav" style="padding: 0; top: 0; position: inherit" role="navigation">
+        <div class="col-sm-10 col-xs-12" id="title_text" style="margin-top: 20px; top: 0;">
+            <div id="gtco-logo"><a href="index.html">npfsolutions <em>.</em></a></div>
+        </div>
+        <div class="col-sm-2" id="lang-pc" style="margin-top: 10px; display: none">
+            <h4>
+                <a href="#">RU</a>|
+                <a href="#">EN</a>|
+                <a href="#">KG</a>
+            </h4>
+        </div>
+        <div class="row">
+            <div style="height: 60px; background-color: rgba(203, 203, 203, 0.6); margin-top: 10px" class="col-xs-12 menu-1 main-nav">
+                <ul style="height: 53px; margin-top: 16px; margin-left: 50px">
+                    <li>
+                        <h4 id="phone-lang" style="color: white; display: none;">
+                            <a href="#">RU</a>|
+                            <a href="#">EN</a>|
+                            <a href="#">KG</a>
+                        </h4>
+                    </li>
+                    <li><a style="" href="index.html" data-nav-section="home">Home</a></li>
+                    <li class="active"><a href="new_page.html" data-nav-section="service">Page</a></li>
+                    <li><a href="contact.html" data-nav-section="contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="gtco-blog" data-section="blog" style="margin-top: 0; height: 900px">
+        <div class="gtco-container" id="blog_text" style="top: -26px; background-color: rgba(211, 211, 211, 0.62); height: 900px; width: 90%; max-width: none">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center gtco-heading" style="margin-top: 80px">
+                    <h2>Соя</h2>
+                    <p>Соя считается одним из лучших растительных продуктов, который содержит в себе очень много белка (46%). ЕЕ еще называют полноценным заменителем мяса, так как соевый белок по структуре очень похож на мясной, и его там даже больше чем в мясе.
+                        Но на самом деле не такой уж очень хороший этот продукт. 95% сои на мировом рынке это гмо соя (генетически модифицирование организмы), это делают для того чтоб предать растению новых физико-химических свойств. Например такое растение не боится сильных засух, его не едят насекомые вредители и много других свойств оно получает. В основном ее выращивают в Аргентине в нашей стране не разрешено выращивать гмо растения.
+                        Ученые спорят между собой о вреде гмо продуктов, одни говорят что они вредны и даже опасны для нашего здоровья из -за их употребления в нашем организме начинается мутация днк.
+                        Некоторые ученые делали эксперименты на лабораторных крысах, их кормили гмо соей, после чего второе поколение крысят становится бесплодными, они не могут дать потомства. Так говорят и станет с людьми.
+                        Другие ученые опровергают это и говорят что этот продукт не опасен для человеческой жизни. Ведь днк человека все время мутирует так и происходит эволюция. Факт один что гмо растения можно сажать тока один раз, а собранный урожай (их семена) уже не хочет прорости если посадить.
+                        Другой минус в сои то что она содержит в себе много фито эстрогенов (женских половых гормонов), употребляя ее вы увеличиваете содержания женского полового гормона, а тестостерон (мужской половой гормон) его автоматически становится меньше. А культуристам нужен именно тестостерон для роста мышц.
+                        Сою используют в очень многих продуктах питания начиная от колбасы и закачивая даже в детском питании (смеси - заменители материнского молока) также в кондитерских изделиях, майонезах.
+                        Смотрите на состав продукта который покупаете в магазине, если в составе пишет растительный белок, значит там есть соя, но некоторые производители, специально не пишут этого, скрывают.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+</div>
+
+<script>
+    var obj = document.getElementById('title_text');
+    var scrolled = obj.getBoundingClientRect().bottom;
+    window.onscroll = function() {
+        if (document.body.clientWidth > 801) {
+            if (scrolled > window.pageYOffset) {
+                document.getElementById('hide_menu_title').style.position = 'fixed';
+                document.getElementById('hide_menu_title').style.top = '-65px';
+                document.getElementById('blog_text').style.top = '-26px';
+            } else if (scrolled < window.pageYOffset) {
+                document.getElementById('blog_text').style.top = '65px';
+                document.getElementById('hide_menu_title').style.top = '0px';
+                document.getElementById('hide_menu_title').style.position = 'inherit';
+            }
+        }if (document.body.clientWidth > 761){
+            if (scrolled > window.pageYOffset){
+                document.getElementById('hide_menu_title').style.top = '0px';
+                document.getElementById('hide_menu_title').style.position = 'inherit';
+                document.getElementById('blog_text').style.top = '-26px';
+            }else if(scrolled < window.pageYOffset){
+                document.getElementById('hide_menu_title').style.position = 'fixed';
+                document.getElementById('hide_menu_title').style.top = '-65px';
+            }
+        }
+    };
+
+
+    if(document.body.clientWidth < 761) {
+        document.getElementById('phone-lang').style.display = 'block';
+    }else if(document.body.clientWidth > 761){
+        document.getElementById('lang-pc').style.display = 'block';
+    }
+    if(document.body.clientWidth < 980 ){
+        document.getElementById('service_detail').style.height = '1200px';
+    }
+    if(document.body.clientWidth < 761) {
+        document.getElementById('service_detail').style.top = '0px';
+    }
+    if(document.body.clientWidth > 779){
+        document.getElementById('map').style.width = '550px';
+    }
+    if(document.body.clientWidth < 662 && document.body.clientWidth > 410) {
+        document.getElementById('map').style.width = '400px';
+
+    }else if(document.body.clientWidth < 412 && document.body.clientWidth > 359){
+        document.getElementById('map').style.width = '350px';
+    }else if(document.body.clientWidth < 359){
+        document.getElementById('map').style.width = '300px';
+    }
+    if(document.body.clientWidth > 1000 ) {
+        document.getElementById('service_detail').style.height = '600px';
+        document.getElementById('map').style.width = '650px';
+    }
+    if(document.body.clientWidth > 1800) {
+        document.getElementById('service_detail').style.height = '600px';
+        document.getElementById('map').style.width = '600px';
+    }
+    if(document.body.clientWidth > 2000) {
+        document.getElementById('service_detail').style.height = '900px';
+        document.getElementById('map').style.width = '650px';
+    }
+</script>
+</body>
+{% endblock %}
+

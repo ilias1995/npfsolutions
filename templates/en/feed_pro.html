@@ -1,0 +1,91 @@
+{% extends 'en/en_base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div id="gtco-blog" data-section="blog" style="top: 0;">
+        <div class="gtco-container" id="blog_text" style="top: -15px; background-color: rgba(211, 211, 211, 0.62); width: 90%; max-width: none">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center gtco-heading" style="margin-top: 80px">
+                    <h2>{{ title }}</h2>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="gtco-footer" role="contentinfo" style="background-color: #444; margin-top: -30px">
+			<div class="gtco-container">
+				<div class="row copyright">
+					<div class="col-md-12" style="margin-top: 10px;">
+						<div class="col-md-4">
+							<ul class="gtco-social-icons">
+								<li><a href="#"><i class="icon-twitter"></i></a></li>
+								<li><a href="#"><i class="icon-facebook"></i></a></li>
+								<li><a href="#"><i class="icon-linkedin"></i></a></li>
+								<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							</ul>
+						</div>
+						<div class="col-md-6">
+							<p>
+								<small class="">&copy; Created by Iliyaz Kazikhodzhaev <a href="https://www.facebook.com/iliyas.kazikhodzhaev" target="_blank">Facebook</a></small>
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</footer>
+    <script>
+    var obj = document.getElementById('title_text');
+    var scrolled = obj.getBoundingClientRect().bottom;
+    window.onscroll = function() {
+        if (document.body.clientWidth > 801){
+            if (scrolled > window.pageYOffset){
+                document.getElementById('hide_menu_title').style.top = '0px';
+                document.getElementById('hide_menu_title').style.position = 'inherit';
+                // document.getElementById('main-menu').style.height = '70px';
+                document.getElementById('gtco-blog').style.marginTop = '0px';
+            }else if(scrolled < window.pageYOffset){
+                document.getElementById('hide_menu_title').style.position = 'fixed';
+                document.getElementById('hide_menu_title').style.top = '-65px';
+                // document.getElementById('main-menu').style.height = '70px';
+                document.getElementById('gtco-blog').style.marginTop = '100px';
+            }
+        }if (document.body.clientWidth > 761){
+            if (scrolled > window.pageYOffset){
+                document.getElementById('hide_menu_title').style.top = '0px';
+                document.getElementById('hide_menu_title').style.position = 'inherit';
+                document.getElementById('slider_top').style.top = '-30px';
+                document.getElementById('blog_text').style.top = '60px';
+                document.getElementById('blog_service').style.top = '0px';
+                document.getElementById('service').style.top = '0px';
+                document.getElementById('video').style.top = '0px';
+                document.getElementById('service_detail').style.top = '0';
+            }else if(scrolled < window.pageYOffset){
+                document.getElementById('hide_menu_title').style.position = 'fixed';
+                document.getElementById('hide_menu_title').style.top = '-65px';
+                document.getElementById('slider_top').style.top = '100px';
+                document.getElementById('blog_service').style.top = '180px';
+                document.getElementById('service').style.top = '0px';
+                document.getElementById('video').style.top = '170px';
+                document.getElementById('service_detail').style.top = '0px';
+            }
+        }else if(document.body.clientWidth < 761){
+            var obj_bootom = document.getElementById('hide_menu_title');
+            var scrolled_bottom = obj_bootom.getBoundingClientRect().bottom;
+            document.getElementById('hide_menu_title').style.position = 'fixed';
+            document.getElementById('slider_top').style.top='-30px';
+            if (scrolled_bottom > window.pageYOffset){
+    //					document.getElementById('blog_service').style.top = '-75px';
+                document.getElementById('slider_top').style.top='0px';
+    //					document.getElementById('service_detail').style.top = '-45px';
+                document.getElementById('block_text').style.top = '-45px';
+
+            }
+        }if(document.body.clientWidth < 1000){
+            document.getElementById('hide_menu_title').style.position = 'fixed';
+            document.getElementById('slider_top').style.top='0px';
+            document.getElementById('slider_top').style.top='0px';
+        }
+    };
+    </script>
+{% endblock %}
+
