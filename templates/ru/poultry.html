@@ -4,9 +4,12 @@
     <div id="gtco-blog" data-section="blog" style="top: 0;">
         <div class="gtco-container" id="blog_text" style="top: -15px; background-color: rgba(211, 211, 211, 0.62); width: 90%; max-width: none">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center gtco-heading" style="margin-top: 80px">
+                <div class="col-md-8 col-md-offset-2 text-center gtco-heading" style="margin-top: 80px; margin-bottom: 50px">
                     <h2>{{ title }}</h2>
-                    <p></p>
+                    <p> {% for poultry in poultry %}
+                            {{ poultry.info|safe }}
+                        {% endfor %}
+                    </p>
                 </div>
             </div>
         </div>

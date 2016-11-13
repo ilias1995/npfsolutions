@@ -10,18 +10,13 @@ def index(request):
 def feed_products(request):
     title = 'Виды корм'
     products = FeedProducts.objects.all()
-    return render(request, 'ru/products.html', {'products': products, 'title': title})
-
-
-def feed_products_info(request, id):
-    feed_info = FeedProducts.objects.get(pk=id)
-    return render(request, 'ru/products_info.html', {'feed_info': feed_info})
+    return render(request, 'ru/feed_pro.html', {'products': products, 'title': title})
 
 
 def poultry(request):
     title = 'Виды куриц'
-    products = Poultry.objects.all()
-    return render(request, 'ru/products.html', {'products': products, 'title': title})
+    poultry = Poultry.objects.all()
+    return render(request, 'ru/poultry.html', {'poultry': poultry, 'title': title})
 
 
 def poultry_info(request):

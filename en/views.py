@@ -8,13 +8,13 @@ def index(request):
 
 
 def feed_products(request):
-    title = 'Виды корм'
+    title = 'Feed products'
     products = FeedProducts.objects.all()
     return render(request, 'en/feed_pro.html', {'products': products, 'title': title})
 
 
 def poultry(request):
-    title = 'Виды куриц'
+    title = 'Poultry'
     products = Poultry.objects.all()
     return render(request, 'en/poultry.html', {'products': products, 'title': title})
 
