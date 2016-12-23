@@ -1,12 +1,18 @@
-{% extends 'base.html' %}
+{% extends 'ru/ru_base.html' %}
 {% load staticfiles %}
 {% block content %}
     <div id="gtco-blog" data-section="blog" style="top: 0;">
-        <div class="gtco-container" id="blog_text" style="top: -15px; background-color: rgba(211, 211, 211, 0.62); width: 90%; max-width: none">
+        <div class="gtco-container" id="blog_text">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center gtco-heading" style="margin-top: 80px">
+                <div class="col-md-12 text-center gtco-heading" style="margin-top: 20px; margin-bottom: 100px">
                     <h2>{{ title }}</h2>
-                    <p></p>
+                    {% for d_info in distributor %}
+                        <div class="col-md-3" style="background-color: #239953; border-radius: 3%; margin-left: 6%; margin-right: 0; margin-top: 2%">
+                            <h4 style="color: white; margin-top: 8%; text-align: center"><strong>{{ d_info.location }}</strong></h4>
+                            <h4 style="color: white; text-align: center">Контакт: {{ d_info.name }}</h4>
+                            <h4 style="color: white; text-align: center">{{ d_info.phone_number }}</h4>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

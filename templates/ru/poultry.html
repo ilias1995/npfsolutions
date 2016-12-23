@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'ru/ru_base.html' %}
 {% load staticfiles %}
 {% block content %}
     <div id="gtco-blog" data-section="blog" style="top: 0;">
@@ -8,6 +8,12 @@
                     <h2>{{ title }}</h2>
                     <p> {% for poultry in poultry %}
                             {{ poultry.info|safe }}
+                        {% endfor %}
+                        {% for dairy_development in dairy_development %}
+                            {{ dairy_development.info|safe }}
+                        {% endfor %}
+                        {% for royal_bread in royal_bread %}
+                            {{ royal_bread.info|safe }}
                         {% endfor %}
                     </p>
                 </div>

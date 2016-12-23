@@ -57,19 +57,19 @@
 	var navigation = function() {
 
 		$('body').on('click', '#gtco-offcanvas ul a:not([class="external"]), .main-nav a:not([class="external"])', function(event){
-			var section = $(this).data('nav-section');
-				if ( $('[data-section="' + section + '"]').length ) {
-			    	$('html, body').animate({
-			        	scrollTop: $('[data-section="' + section + '"]').offset().top - 55
-			    	}, 500, 'easeInOutExpo');
-			   }
-
-			   if ($('body').hasClass('offcanvas')) {
-			   	$('body').removeClass('offcanvas');
-			   	$('.js-gtco-nav-toggle').removeClass('active');
-			   }
-		   event.preventDefault();
-		   return false;
+			// var section = $(this).data('nav-section');
+			// 	if ( $('[data-section="' + section + '"]').length ) {
+			//     	$('html, body').animate({
+			//         	scrollTop: $('[data-section="' + section + '"]').offset().top - 55
+			//     	}, 500, 'easeInOutExpo');
+			//    }
+           //
+			//    if ($('body').hasClass('offcanvas')) {
+			//    	$('body').removeClass('offcanvas');
+			//    	$('.js-gtco-nav-toggle').removeClass('active');
+			//    }
+		   // event.preventDefault();
+		   // return false;
 		});
 
 	};
@@ -91,19 +91,19 @@
 
 		// Hover dropdown menu on mobile
 		$('.offcanvas-has-dropdown').mouseenter(function(){
-			var $this = $(this);
+			var $this = $(this);ul
 
 			$this
 				.addClass('active')
 				.find('ul')
-				.slideDown(500, 'easeOutExpo');				
+				.slideDown(500, 'easeOutExpo');
 		}).mouseleave(function(){
 
 			var $this = $(this);
 			$this
 				.removeClass('active')
 				.find('ul')
-				.slideUp(500, 'easeOutExpo');				
+				.slideUp(500, 'easeOutExpo');
 		});
 
 

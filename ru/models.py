@@ -26,18 +26,38 @@ class Poultry(models.Model):
 
 
 class Distributor(models.Model):
+    location = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     phone_number = models.CharField(max_length=200)
-    place = models.CharField(max_length=200)
 
     def __unicode__(self):
         return self.name
 
 
 class DistributorShip(models.Model):
+    location = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     phone_number = models.CharField(max_length=200)
-    place = models.CharField(max_length=200)
+
+    def __unicode__(self):
+        return self.name
+
+
+class DairyDevelopment(models.Model):
+    name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='feed_img/ru/')
+    info = RedactorField(verbose_name=u'Text', redactor_options={'lang': 'en', 'focus': True}, upload_to='tmp/', allow_file_upload=True, allow_image_upload=True, blank=True)
+    location = models.CharField(max_length=200, blank=True)
+
+    def __unicode__(self):
+        return self.name
+
+
+class RoyalBread(models.Model):
+    name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='feed_img/ru/')
+    info = RedactorField(verbose_name=u'Text', redactor_options={'lang': 'en', 'focus': True}, upload_to='tmp/', allow_file_upload=True, allow_image_upload=True, blank=True)
+    location = models.CharField(max_length=200, blank=True)
 
     def __unicode__(self):
         return self.name
